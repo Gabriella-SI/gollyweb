@@ -1,5 +1,5 @@
 import { MessageCircle } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/models";
+import { WHATSAPP_URL, openWhatsApp } from "@/lib/models";
 
 export function WhatsAppFab() {
   return (
@@ -7,6 +7,10 @@ export function WhatsAppFab() {
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={(e) => {
+        e.preventDefault();
+        openWhatsApp(WHATSAPP_URL);
+      }}
       className="fixed bottom-6 right-6 z-50 flex animate-float cursor-pointer items-center justify-center rounded-full border border-white/15 bg-emerald-500 p-4 text-white shadow-[0_25px_50px_-20px_rgba(0,0,0,0.9)] transition-all duration-300 hover:scale-110 hover:bg-emerald-400"
       aria-label="Contato via WhatsApp"
     >

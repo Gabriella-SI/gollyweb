@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Send } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { createWhatsAppUrl } from "@/lib/models";
+import { createWhatsAppUrl, openWhatsApp } from "@/lib/models";
 
 export function QuoteForm() {
   const [formData, setFormData] = useState({
@@ -119,6 +119,10 @@ export function QuoteForm() {
                 href={createWhatsAppUrl(quoteMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  openWhatsApp(createWhatsAppUrl(quoteMessage));
+                }}
                 className="w-full py-4 rounded-xl bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white font-bold text-sm shadow-lg shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer text-center block select-none"
               >
                 Enviar Orçamento pelo WhatsApp <Send className="w-4 h-4" />

@@ -277,5 +277,16 @@ export function createWhatsAppUrl(message = WHATSAPP_MESSAGE) {
 }
 
 export const WHATSAPP_URL = createWhatsAppUrl();
+
+/**
+ * Opens WhatsApp in a new tab from a click handler.
+ * wa.me redirects to api.whatsapp.com, which some embedded previews block when
+ * followed as a plain navigation — window.open avoids that path.
+ */
+export function openWhatsApp(url: string = WHATSAPP_URL) {
+  const win = window.open(url, "_blank", "noopener,noreferrer");
+  if (!win) window.location.href = url;
+}
+
 export const INSTAGRAM_URL = "https://instagram.com/gollyweb/";
 export const EMAIL = "gollyweb@gmail.com";

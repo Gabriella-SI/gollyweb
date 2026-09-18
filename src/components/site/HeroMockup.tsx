@@ -1,5 +1,5 @@
 import { ArrowRight, MessageSquare, TrendingUp } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/models";
+import { WHATSAPP_URL, openWhatsApp } from "@/lib/models";
 
 const stats = [
   { value: "48h", label: "Entrega média" },
@@ -63,6 +63,10 @@ export function HeroMockup() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                openWhatsApp(WHATSAPP_URL);
+              }}
               className="float-lift flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-8 py-4 font-display font-semibold text-foreground backdrop-blur hover:float-lift-hover active:scale-95"
             >
               <MessageSquare className="h-4 w-4 text-emerald-400" /> Falar no WhatsApp
