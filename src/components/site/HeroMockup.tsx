@@ -1,5 +1,5 @@
 import { ArrowRight, MessageSquare, TrendingUp } from "lucide-react";
-import { WHATSAPP_URL } from "@/lib/models";
+import { WHATSAPP_URL, openWhatsApp } from "@/lib/models";
 
 const stats = [
   { value: "48h", label: "Entrega média" },

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Send } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { createWhatsAppUrl } from "@/lib/models";
+import { createWhatsAppUrl, openWhatsApp } from "@/lib/models";
 
 export function QuoteForm() {
   const [formData, setFormData] = useState({
